@@ -14,7 +14,7 @@ class IDIterator:
         return self
 
     def __next__(self):
-        print("next number:")
+        print("next correct ID number:")
         while self._id < MAX_NUMBER:
             self._id += 1
             if validity_check(self._id):
