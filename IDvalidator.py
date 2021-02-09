@@ -5,8 +5,10 @@ class IDIterator:
         self._list_of_ids = []
         self._starting_point = id
         self._pointer = -1
+        self._id = int(id)
+        
         # self._id = '{:09d}'.format(id)
-        self._id = int(str(id).zfill(9))
+        #self._id = int(str(id).zfill(9))
         # for i in range(999999999):
         #    self._list_of_ids.append('{:09d}'.format(i))
 
@@ -70,33 +72,18 @@ def validity_check(id_number):
 
 
 def main():
-    '''
-    id_number = input("Please enter ID Number")
+    id_number = "066722422" #ID number to start check
 
-    try:
-        if not id_number.isdigit():
-            raise NotADigitInput(id_number)
-        if not len(id_number) == 9:
+    if not id_number.isdigit():
+        raise NotADigitInput(id_number)
+    if not len(id_number) == 9:
             raise Not9DigitNumber(id_number)
-        if not validity_check(id_number):
-            raise WrongIDNumber(id_number)
-        else:
-            print("Valid ID!")
-
-    except NotADigitInput as eNotADigitInput:
-        print(eNotADigitInput)
-    except Not9DigitNumber as eNot9DigitNumber:
-        print(eNot9DigitNumber)
-    except WrongIDNumber as eWrongIDnumber:
-        print(eWrongIDnumber)
-
-    '''
-    IDiterable = IDIterator("123456780")
-    IDiterator = iter(IDiterable)
+    if not validity_check(id_number):
+        raise WrongIDNumber(id_number)
+    else:
+        IDiterable = IDIterator(id_number)
 
     for itr in range(10):
-        print(next(IDiterable))
-
-
+        print(str(next(IDiterable)).zfill(9))
 
 main()
