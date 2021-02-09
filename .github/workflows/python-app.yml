@@ -1,13 +1,11 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: Python application
-description: >
-  python application to check 
-  1) valid ID numbers 
-  2) generate next valid ID numbers following a base ID
-  pytest is setup to unit test the application
-  one done, either successfull - or an error "BAD ID NUMBER" will pop up
+#
+#  python application to check 
+#  1) valid ID numbers 
+#  2) generate next valid ID numbers following a base ID
+#  pytest is setup to unit test the application
+#  one done, either successfull - or an error "BAD ID NUMBER" will pop up
+
 on:
   push:
     branches: [ master ]
